@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/products', [ProductController::class, 'apiProducts']);
+
+Route::get('/product-variants/{id}', [ProductController::class, 'getVariants']);
