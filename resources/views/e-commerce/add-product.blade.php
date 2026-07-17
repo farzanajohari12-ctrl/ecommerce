@@ -415,7 +415,7 @@
             });
 
             $.ajax({
-                url: "/laravel/public/add-product",
+                url: "{{ route('add-product.store') }}",
                 type: "POST",
                 data: formData,
                 processData: false,

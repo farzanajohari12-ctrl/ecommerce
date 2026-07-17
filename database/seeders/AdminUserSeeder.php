@@ -23,17 +23,20 @@ class AdminUserSeeder extends Seeder
         ]);
 
         // Create admin user
-        $admin = User::firstOrCreate(
+        $admin = User::updateOrCreate(
             [
                 'email' => 'admin@example.com',
             ],
             [
                 'name' => 'Admin',
-                'password' => Hash::make('Admin@123'),
+                'password' => Hash::make('Admin@1234'),
+                'role' => 'admin', // Update users.role column
             ]
         );
 
-        // Attach admin role
-        $admin->assignRole($adminRole);
+        // Assign Spatie role
+        if (! $admin->hasRole('admin')) {
+            $admin->assignRole($adminRole);
+        }
     }
 }

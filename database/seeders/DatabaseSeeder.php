@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             BadgeSeeder::class,
             VariantAttributeSeeder::class,
             AdminUserSeeder::class,
+            PermissionSeeder::class,
         ]);
     }
 }
